@@ -1,18 +1,27 @@
-import { overrideThemes } from 'markedit-theming';
+import { CustomTheme, overrideThemes } from 'markedit-theming';
+import { MarkEdit, type JSONObject, type JSONValue } from 'markedit-api';
 import { tokyoNight } from '@uiw/codemirror-theme-tokyo-night';
 import { tokyoNightDay } from '@uiw/codemirror-theme-tokyo-night-day';
 
+const toObject = (value: JSONValue, fallback = {}) => (value ?? fallback) as JSONObject;
+const rootValue = toObject(toObject(MarkEdit.userSettings)['extension.markeditThemeTokyoNight']);
+const enabledMode = (rootValue.enabledMode ?? 'both') as string;
+
+const lightTheme: CustomTheme = {
+  extension: tokyoNightDay,
+  colors: {
+    accentColor: '#b15c00',
+  },
+};
+
+const darkTheme: CustomTheme = {
+  extension: tokyoNight,
+  colors: {
+    accentColor: '#89ddff',
+  },
+};
+
 overrideThemes({
-  light: {
-    extension: tokyoNightDay,
-    colors: {
-      accentColor: '#b15c00',
-    },
-  },
-  dark: {
-    extension: tokyoNight,
-    colors: {
-      accentColor: '#89ddff',
-    },
-  },
+  light: ['both', 'light'].includes(enabledMode) ? lightTheme : undefined,
+  dark: ['both', 'dark'].includes(enabledMode) ? darkTheme : undefined,
 });
