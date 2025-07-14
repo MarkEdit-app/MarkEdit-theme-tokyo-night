@@ -7,19 +7,8 @@ const toObject = (value: JSONValue, fallback = {}) => (value ?? fallback) as JSO
 const rootValue = toObject(toObject(MarkEdit.userSettings)['extension.markeditThemeTokyoNight']);
 const enabledMode = (rootValue.enabledMode ?? 'both') as string;
 
-const lightTheme: CustomTheme = {
-  extension: tokyoNightDay,
-  colors: {
-    accentColor: '#b15c00',
-  },
-};
-
-const darkTheme: CustomTheme = {
-  extension: tokyoNight,
-  colors: {
-    accentColor: '#89ddff',
-  },
-};
+const lightTheme: CustomTheme = { extension: tokyoNightDay };
+const darkTheme: CustomTheme = { extension: tokyoNight };
 
 overrideThemes({
   light: ['both', 'light'].includes(enabledMode) ? lightTheme : undefined,
