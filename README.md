@@ -2,6 +2,8 @@
 
 [Tokyo Night](https://github.com/tokyo-night) theme for [MarkEdit](https://github.com/MarkEdit-app/MarkEdit), built on top of [MarkEdit-theming](https://github.com/MarkEdit-app/MarkEdit-theming).
 
+<img width="344" title="Tokyo Night Day" src="https://github.com/user-attachments/assets/314243e9-4dc4-4fdb-a540-bd4dd4fc0caa" /> <img width="344" title="Tokyo Night" src="https://github.com/user-attachments/assets/7df199aa-6cd5-4a81-9a7e-b88f2986e0c1" />
+
 To customize colors, see [Customization](https://github.com/MarkEdit-app/MarkEdit-theming/wiki#customization) for details.
 
 ## Installation
